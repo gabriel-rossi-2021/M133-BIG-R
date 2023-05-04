@@ -13,7 +13,7 @@
 
         <div class="aboutus-section" style="margin-top:5%;">
                   <div class="row-phone">
-                      <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%">
                           <div class="aboutus" style="text-align:justify">
                               <h2 class="aboutus-title">Présentation</h2>
                               <p class="aboutus-text" style="line-height:revert;">Je suis un apprenti informaticien en 3ème années d'apprentissage. Je décide de lancer ma petite entreprise de support informatique</p>
@@ -21,7 +21,7 @@
                               <a href="#rdv" class="btn btn-secondary mt-5 button-rdv" style="display:flex;justify-content:center;color:white;background:#2c6db8">Prendre RDV</a>
                           </div>
                       </div>
-                      <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div>
                           <div class="aboutus-banner">
                             <img style="height:400px;width:500px;margin-left: -1%;"src="{{ asset('img/logo-final.png') }}" alt="">
                           </div>

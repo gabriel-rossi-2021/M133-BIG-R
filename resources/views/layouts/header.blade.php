@@ -7,9 +7,8 @@
     <!-- CSS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <!-- CSS FILE -->
-    <link rel="stylesheet" href="{{ asset('css/style-index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style-connexion.css') }}">
+    <!-- FILE CSS, JS, SCSS -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/style-index.css', 'resources/css/style-connexion.css'])
 
     <!-- LOGO ONGLET -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/logo-rond.png') }}">
@@ -50,12 +49,14 @@
 
                 <ul class="navbar-nav" style="margin-top:1%;" id="top-menu">
                     <li class="nav-item" style="text-align:right">
-                        @if(auth()->check())
-                            <a class="nav-link" href="{{ route('vue_connexion') }}">Casda</a>
+                        @auth
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-link nav-link">Déconnexion</button>
+                            </form>
                         @else
                             <a class="nav-link" href="{{ route('vue_connexion') }}">CONNEXION</a>
-                        @endif
-
+                        @endauth
                     </li>
                 </ul>
             </div>

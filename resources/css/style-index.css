@@ -357,7 +357,10 @@ a:hover, a:active {
     appearance: none;
     border-radius: 0;
 }
-
+/* SECTOON RESEAUX */
+.bg-color-div{
+    background-color: #f8fafc;
+}
 /* RESPONSIVE */
 
 @media screen and (min-width: 992px) {
@@ -374,13 +377,16 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 768px){
-    .col-md-6 {
-        flex: 0 0 auto;
-        width: 100%;
-    }
     .col-md-3 {
         flex: 0 0 auto;
         width: 100%;
     }
 }
+
+@media screen and (max-width: 992px){
+    .col-md-3 {
+        width: 100%;
+    }
+}
+
 

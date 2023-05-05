@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -13,8 +14,12 @@ class AuthController extends Controller
     }
 
     public function store(Request $request){
+        // RECUPERER LES DONNEES
         $login = $request->input('username');
         $pwd = $request->input('password');
+
+        // HASH DU MOT DE PASSE
+        $pwdHash = Hash::make($pwd);
 
         // LECTURE DU FICHIER DATA.TXT
         $users = file_get_contents(base_path('resources/data/data.txt'));
@@ -25,9 +30,8 @@ class AuthController extends Controller
             $credentials = explode(':', $user);
 
             // VÉRIFIER SI LE LOGIN ET LE MDP CORRESPOND
-            if ($login == $credentials[0] && $pwd == $credentials[1]){
+            if ($login == $credentials[0] && Hash::check($pwd, $pwdHash) == $credentials[1]){
                 //@Auth::login($user);
-
                 return redirect()->intended('/compte');
             }
         }
@@ -37,7 +41,4 @@ class AuthController extends Controller
             'error' => "L'email et/ou le mot de passe ne sont pas valides."
         ]);
     }
-
-
-
 }

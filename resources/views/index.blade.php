@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-desktop"></i>
@@ -51,7 +51,7 @@
                 </div>
                 <!-- / -->
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-server"></i>
@@ -64,7 +64,7 @@
                 </div>
                 <!-- / -->
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-wifi"></i>
@@ -77,7 +77,7 @@
                 </div>
                 <!-- / -->
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-truck front"></i>
@@ -90,7 +90,7 @@
                 </div>
                 <!-- / -->
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-cloud"></i>
@@ -103,7 +103,7 @@
                 </div>
                 <!-- / -->
                 <!-- feaure box -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-lg-4">
                     <div class="feature-box-1">
                         <div class="icon">
                             <i class="fa fa-graduation-cap"></i>
@@ -173,7 +173,7 @@
           <div class="container" style="margin-bottom:5%;">
               <div class="row">
                   <!-- contact form -->
-                  <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+                  <div class="wow animated fadeInRight" data-wow-delay=".2s">
                       <form action="https://formspree.io/f/mgeqrewo" method="POST">
                           <!-- Name -->
                           <div class="form-group label-floating">
@@ -238,7 +238,7 @@
             <div class="col-sm-12 col-lg-3 my-5 row-icon-size">
               <div class="card border-0">
               <a style="text-decoration:none;"href="#">
-                  <div class="card-body text-center">
+                  <div class="card-body text-center bg-color-div">
                       <i class="fab fa-facebook fa-3x mb-3" aria-hidden="true"></i>
                       <h4 class="text-uppercase mb-5">Facebook</h4>
                   </div>
@@ -248,7 +248,7 @@
             <div class="col-sm-12 col-lg-3 my-5 row-icon-size">
               <div class="card border-0">
               <a style="text-decoration:none;"href="#">
-                <div class="card-body text-center">
+                <div class="card-body text-center bg-color-div">
                   <i class="fab fa-instagram fa-3x mb-3" aria-hidden="true"></i>
                   <h4 class="text-uppercase mb-5">Instagram</h4>
                 </div>
@@ -258,7 +258,7 @@
             <div class="col-sm-12 col-lg-3 my-5 row-icon-size">
               <div class="card border-0">
               <a style="text-decoration:none;"href="#">
-                <div class="card-body text-center">
+                <div class="card-body text-center bg-color-div">
                   <i class="fa fa-map-marker fa-3x mb-3" aria-hidden="true"></i>
                   <h4 class="text-uppercase mb-5">~Bussigny, VD</h4>
                 </div>

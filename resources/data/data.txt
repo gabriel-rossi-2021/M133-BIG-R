@@ -1,2 +1,1 @@
-test:test
-John:Test2023
+test:$2y$10$VFAvrey7wLO/woq00y96JuCNlS.Iwk2zkHVaj5/DApvCStaSEq6AW:gabir2004@gmail.com:Autres

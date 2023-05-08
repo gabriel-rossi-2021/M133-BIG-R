@@ -49,14 +49,14 @@
 
                 <ul class="navbar-nav" style="margin-top:1%;" id="top-menu">
                     <li class="nav-item" style="text-align:right">
-                        @auth
+                        @if (Auth::check())
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-link nav-link">Déconnexion</button>
                             </form>
                         @else
                             <a class="nav-link" href="{{ route('vue_connexion') }}">CONNEXION</a>
-                        @endauth
+                        @endif
                     </li>
                 </ul>
             </div>

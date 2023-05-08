@@ -1,6 +1,6 @@
 #section-update{
     width: 100%;
-    height: auto;
+    height: 92vh;
     margin-top: 116px;
     background-color: #f8fafc;
 }
@@ -10,7 +10,7 @@
     height: auto;
 }
 .container-update h1{
-    padding-top: 2%;
+    padding-top: 5%;
     text-align: center;
 }
 .div-form-update{

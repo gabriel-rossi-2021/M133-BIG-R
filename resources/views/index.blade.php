@@ -12,6 +12,11 @@
           <br><br>
 
         <div class="aboutus-section" style="margin-top:5%;">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
                   <div class="row-phone">
                       <div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%">
                           <div class="aboutus" style="text-align:justify">

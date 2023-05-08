@@ -10,17 +10,26 @@
                     @csrf
                     <div class="form-group">
                         <label for="username" class="form-label">Nom d'utilisateur :</label>
-                        <input type="text" class="form-control" id="username" name="username"placeholder="">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username"placeholder="">
+                        @error('username')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="pwd" class="form-label">Mot de passe :</label>
-                        <input type="password" class="form-control" id="pwd" name="pwd">
+                        <input type="password" class="form-control @error('pwd') is-invalid @enderror" id="pwd" name="pwd">
+                        @error('pwd')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="email" class="form-label">Adresse email :</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <br>
                     <div class="form-group">

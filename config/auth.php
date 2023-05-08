@@ -62,6 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+            'path' => base_path('resources/data/data.txt'),
             'model' => App\Models\User::class,
         ],
 

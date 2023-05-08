@@ -2,14 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-
-class User extends Model implements Authenticatable
+class Utilisateur extends Model implements Authenticatable
 {
     protected $fillable = ['username', 'password'];
 
@@ -33,7 +29,7 @@ class User extends Model implements Authenticatable
         return null;
     }
 
-    public function getRememberToken($value)
+    public function setRememberToken($value)
     {
 
     }

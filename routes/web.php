@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CompteController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\Logout;
 
 // ROUTE POUR LA VUE INDEX
 Route::get('/', [IndexController::class, 'index'])->name('vue_index');
@@ -19,3 +20,6 @@ Route::get('/compte', [CompteController::class, 'index'])->name('vue_conpte'); /
 // ROUTE POUR LA VUE UPDATECOMPTE
 Route::get('/update', [UpdateController::class, 'index'])->name('vue_update');
 Route::POST('/update', [UpdateController::class, 'update'])->name('vue_update-form');
+
+
+Route::get('/logout', [Logout::class, 'index'])->name('logout');

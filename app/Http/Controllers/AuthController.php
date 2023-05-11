@@ -47,7 +47,7 @@ class AuthController extends Controller
                 // VÉRIFIER SI LE LOGIN ET LE MDP CORRESPOND
                 if ($login == $credentials[0] && Hash::check($pwd, $credentials[1])){
                     Auth::login($userTest);
-                    return redirect()->intended('/compte');
+                    return redirect()->intended('/compte')->cookie('login', $login, 60);
                 }
             }
         }else{

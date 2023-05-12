@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Cookie;
 use App\Models\Utilisateur;
 
 class AuthController extends Controller
@@ -60,5 +61,11 @@ class AuthController extends Controller
         return redirect()->back()->withInput($request->only('email'))->withErrors([
             'error' => "L'email et/ou le mot de passe ne sont pas valides."
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('vue_connexion')->withCookie(Cookie::forget('login'));
     }
 }

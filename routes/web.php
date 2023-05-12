@@ -22,4 +22,5 @@ Route::get('/update', [UpdateController::class, 'index'])->name('vue_update');
 Route::POST('/update', [UpdateController::class, 'update'])->name('vue_update-form');
 
 
-Route::get('/logout', [Logout::class, 'index'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+

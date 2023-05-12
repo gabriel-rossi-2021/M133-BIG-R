@@ -49,14 +49,11 @@
 
                 <ul class="navbar-nav" style="margin-top:1%;" id="top-menu">
                     <li class="nav-item" style="text-align:right">
-                    @if (request()->cookie('login'))
-                        <form actio="{{ route('logout') }}" method="GET">
-                            @csrf
-                            <button type="submit" class="btn btn-link nav-link">DECONNEXION</button>
-                        </form>
-                    @else
-                        <a class="nav-link" href="{{ route('vue_connexion') }}">CONNEXION</a>
-                    @endif
+                        @if (request()->cookie('login'))
+                            <a class="nav-link" href="{{ route('logout') }}">DECONNEXION</a>
+                        @else
+                            <a class="nav-link" href="{{ route('vue_connexion') }}">CONNEXION</a>
+                        @endif
                     </li>
                 </ul>
             </div>

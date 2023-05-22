@@ -37,21 +37,23 @@ class AuthController extends Controller
 
         // VERIFICATION CAPTCHA
         if ($captcha == $result){
-            // PARCOURS CHAQUE LIGNE DU FICHIER
-            foreach(explode("\n", $users) as $user){
-                // SÉPARER LE NOM D'UTILISATEUR ET LE MOT DE PASSE PAR LE CARACTÈRE DE DEUX POINTS (:)
-                $credentials = explode(':', $user);
+        // PARCOURS CHAQUE LIGNE DU FICHIER
+        foreach(explode("\n", $users) as $user){
+            // SÉPARER LE NOM D'UTILISATEUR ET LE MOT DE PASSE PAR LE CARACTÈRE DE DEUX POINTS (:)
+            $credentials = explode(':', $user);
 
-                // STOCKER LES CREDENTIALS DANS USERTEST
+            // VÉRIFIER SI LE LOGIN ET LE MDP CORRESPONDENT
+            if ($login == $credentials[0] && Hash::check($pwd, $credentials[1])){
+                // CRÉER UNE SESSION UTILISATEUR
                 $userTest = new Utilisateur(['username' => $credentials[0], 'password' => $credentials[1]]);
+                Auth::login($userTest);
 
-                // VÉRIFIER SI LE LOGIN ET LE MDP CORRESPOND
-                if ($login == $credentials[0] && Hash::check($pwd, $credentials[1])){
-                    Auth::login($userTest);
-                    return redirect()->intended('/compte')->cookie('login', $login, 60);
-                }
+                $request->session()->put('user', $userTest);
+
+                // REDIRIGER VERS LA PAGE COMPTE AVEC UN COOKIE LOGIN
+                return redirect()->intended('/compte');
             }
-        }else{
+        }
             return redirect()->back()->withErrors([
                 'error' => "Le captcha n'est pas valide"
             ]);
@@ -66,6 +68,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('vue_connexion')->withCookie(Cookie::forget('login'));
+        $request->session()->flush();
+        return redirect()->route('vue_connexion');
     }
 }

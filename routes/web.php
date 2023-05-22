@@ -15,7 +15,7 @@ Route::get('/connexion', [AuthController::class, 'index'])->name('vue_connexion'
 Route::post('/connexion', [AuthController::class, 'store'])->name('store_connexion');
 
 // ROUTE POUR LA VUE COMPTE
-Route::get('/compte', [CompteController::class, 'index'])->name('vue_conpte'); // NE PAS OUBLIER ->middleware('auth')
+Route::get('/compte', [CompteController::class, 'index'])->name('vue_conpte')->middleware('auth');
 
 // ROUTE POUR LA VUE UPDATECOMPTE
 Route::get('/update', [UpdateController::class, 'index'])->name('vue_update');

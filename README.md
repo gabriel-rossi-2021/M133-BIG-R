@@ -6,5 +6,6 @@
     <li>Installer les dépendences (composer install)</li>
     <li>Lancer le projet (php artisan serve)</li><br>
     <li>Ouvrir une autre console</li>
+    <li>Installer npm (npm install)</li>
     <li>Lancer le run dev (npm run dev)</h1>
 </ul>
